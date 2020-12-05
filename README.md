@@ -1,10 +1,10 @@
 # <p align="center" > تنصيب سورس تقسيم
 # <p align="center" > ┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉
 # <p align="center" > ⤈ ↫ كود التنصيب الاول مع المكاتب ↬ ⤈
-# <p align="center" > `git clone https://github.com/HSO7/AbsTaKSEm.git && cd TaKSEm  && chmod +x tg && chmod +x RUNABS.sh && chmod +x ABS && ./RUNABS.sh install`
+# <p align="center" > `git clone https://github.com/HSO7/TaKSEm.git && cd TaKSEm  && chmod +x tg && chmod +x RUNABS.sh && chmod +x ABS && ./RUNABS.sh install`
 # <p align="center" > ┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉
 # <p align="center" > ⤈ ↫ كود التنصيب السريع من دون مكاتب ↬ ⤈
-# <p align="center" > `git clone https://github.com/HSO7/AbsTaKSEm.git && cd TaKSEm  && chmod +x tg && chmod +x RUNABS.sh && chmod +x ABS && ./RUNABS.sh`
+# <p align="center" > `git clone https://github.com/HSO7/TaKSEm.git && cd TaKSEm  && chmod +x tg && chmod +x RUNABS.sh && chmod +x ABS && ./RUNABS.sh`
 # <p align="center" > ┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉
 # <p align="center" > قم بنسخ احدى اكواد التنصيب
 # <p align="center" > والصقه في الترمنال واضغط انتر
