@@ -3960,15 +3960,13 @@ end
 if text:match("^السورس$") or text:match("^سورس$") then 
 local text =  [[
 Welcome To Source
-⌁︙DevProx TEAM
+⌁︙TaKSEm TEAM
 ┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉
 ⌁︙[Source Channel](https://t.me/EIEAE)
 
-⌁︙[Exp Source](https://t.me/Exp_Dev)
-
-⌁︙[Developer](https://t.me/IQ_ABS)
+⌁︙[Developer](https://t.me/BsSs5)
 ┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉
-⌁︙[Tws DevProx](https://t.me/IQA_bot)
+⌁︙[Tws TaKSEm](https://t.me/TW0HBOT)
 ]]
 Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end
