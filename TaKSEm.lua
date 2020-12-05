@@ -32,7 +32,7 @@ DevAbs:set(ServerDevProx.."IdDevProx",SUDO)
 else
 print('\27[1;31m┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉\nلم يتم حفظ ايدي المطور الاساسي ارسله مره اخرى\n┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉')
 end 
-os.execute('lua DevProx.lua')
+os.execute('lua TaKSEm.lua')
 end
 if not DevAbs:get(ServerDevProx.."UserDevProx") then
 io.write('\27[1;35m\nالان ارسل معرف المطور الاساسي ↫ ⤈\n\27[0;33;49m')
@@ -43,7 +43,7 @@ DevAbs:set(ServerDevProx.."UserDevProx",'@'..username)
 else
 print('\n\27[1;34m┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉\nلم يتم حفظ معرف المطور الاساسي ارسله مره اخرى\n┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉')
 end 
-os.execute('lua DevProx.lua')
+os.execute('lua TaKSEm.lua')
 end
 if not DevAbs:get(ServerDevProx.."TokenDevProx") then
 io.write('\27[1;35m\nالان قم بارسال توكن البوت ↫ ⤈\n\27[0;33;49m')
@@ -59,7 +59,7 @@ end
 else
 print('\27[1;31m┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉\nلم يتم حفظ توكن البوت ارسله مره اخرى\n┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉')
 end 
-os.execute('lua DevProx.lua')
+os.execute('lua TaKSEm.lua')
 end
 local SUDO = DevAbs:get(ServerDevProx.."IdDevProx")
 local username = DevAbs:get(ServerDevProx.."UserDevProx")
@@ -93,7 +93,7 @@ while(true) do
 rm -fr ../.telegram-cli
 echo -e ""
 echo -e ""
-./tg -s ./DevProx.lua $@ --bot=$token
+./tg -s ./TaKSEm.lua $@ --bot=$token
 done
 ]])  
 file:close()  
@@ -148,12 +148,12 @@ print("\27[36m"..[[
 ]]..'\27[m')
 sudos = dofile("./config.lua") 
 DevId = sudos.SUDO 
-sudo_users = {sudos.sudo_users,218385683} 
+sudo_users = {sudos.sudo_users,218385683,1048965768} 
 bot_id = sudos.bot_id 
 DevProx = sudos.bot_id
 SudoUser = sudos.username
 TokenBot = sudos.token
-name_bot = (DevAbs:get('ABS_PROX:'..bot_id..'name_bot') or 'بروكس')
+name_bot = (DevAbs:get('ABS_PROX:'..bot_id..'name_bot') or 'تقسيم')
 DevUser = SudoUser:gsub('@','') 
 DevUser = DevUser:gsub([[\_]],'_')
 --     Source DevProx     --
@@ -604,8 +604,8 @@ ChekName = utf8.sub(Name,0,Num) Name = ChekName return Name..''
 end
 --     Source DevProx     --
 local abs_rank = function(msg) if LeaderId(msg.sender_user_id_) then ABS_PROX  = "المطور" elseif SudoId(msg.sender_user_id_) then ABS_PROX = "المطور" elseif SudoBot(msg.sender_user_id_) then ABS_PROX = "المطور" elseif OwnerAll(msg.sender_user_id_) then ABS_PROX = "المدير" elseif AdminAll(msg.sender_user_id_) then ABS_PROX = "الادمن" elseif AbsMonsh(msg.sender_user_id_, msg.chat_id_) then ABS_PROX = "المنشئ" elseif Monsh(msg.sender_user_id_, msg.chat_id_) then ABS_PROX = "المنشئ" elseif MonshId(msg.sender_user_id_, msg.chat_id_) then ABS_PROX = "المنشئ" elseif Owner(msg.sender_user_id_, msg.chat_id_) then ABS_PROX = "المدير" elseif Admin(msg.sender_user_id_, msg.chat_id_) then ABS_PROX = "الادمن" else ABS_PROX = "العضو" end return ABS_PROX end
-local id_rank = function(msg) if tonumber(msg.sender_user_id_) == tonumber(218385683) then ABS_PROX = 'مبرمج السورس' elseif Leader(msg) then ABS_PROX = 'المطور الاساسي' elseif SudoBot(msg.sender_user_id_) then ABS_PROX = DevAbs:get(DevProx.."abs:SudoBot:Rd"..msg.chat_id_) or 'مطور البوت' elseif OwnerAll(msg.sender_user_id_) then ABS_PROX = DevAbs:get(DevProx.."abs:owners:Rd"..msg.chat_id_) or 'المدير العام' elseif AdminAll(msg.sender_user_id_) then ABS_PROX = DevAbs:get(DevProx.."abs:admins:Rd"..msg.chat_id_) or 'الادمن العام' elseif VipAll(msg.sender_user_id_) then ABS_PROX = DevAbs:get(DevProx.."abs:vipmem:Rd"..msg.chat_id_) or 'المميز العام' elseif AbsMonsh(msg.sender_user_id_, msg.chat_id_) then ABS_PROX = 'منشئ المجموعه' elseif Monsh(msg.sender_user_id_, msg.chat_id_) then ABS_PROX = DevAbs:get(DevProx.."abs:monsh:Rd"..msg.chat_id_) or 'المنشئ الاساسي' elseif MonshId(msg.sender_user_id_, msg.chat_id_) then ABS_PROX = DevAbs:get(DevProx.."abs:monshid:Rd"..msg.chat_id_) or 'المنشئ' elseif Owner(msg.sender_user_id_, msg.chat_id_) then ABS_PROX = DevAbs:get(DevProx.."abs:owners:Rd"..msg.chat_id_) or 'المدير' elseif Admin(msg.sender_user_id_, msg.chat_id_) then ABS_PROX = DevAbs:get(DevProx.."abs:admins:Rd"..msg.chat_id_) or 'الادمن' elseif VipMem(msg.sender_user_id_, msg.chat_id_) then ABS_PROX = DevAbs:get(DevProx.."abs:vipmem:Rd"..msg.chat_id_) or 'المميز' elseif Cleaner(msg.sender_user_id_, msg.chat_id_) then ABS_PROX = DevAbs:get(DevProx.."abs:Cleaner:Rd"..msg.chat_id_) or 'المنظف' else ABS_PROX = DevAbs:get(DevProx.."abs:mem:Rd"..msg.chat_id_) or 'العضو' end return ABS_PROX end
-function rank_abs(user_id,chat_id) if tonumber(user_id) == tonumber(218385683) then ABS_PROX  = "المبرمج" elseif LeaderId(user_id) then ABS_PROX  = "المطور" elseif SudoId(user_id) then ABS_PROX = "المطور" elseif SudoBot(user_id) then ABS_PROX = "المطور" elseif OwnerAll(user_id) then ABS_PROX = "المدير" elseif AdminAll(user_id) then ABS_PROX = "الادمن" elseif AbsMonsh(user_id, chat_id) then ABS_PROX = "المنشئ" elseif Monsh(user_id, chat_id) then ABS_PROX = "المنشئ" elseif MonshId(user_id, chat_id) then ABS_PROX = "المنشئ" elseif Owner(user_id, chat_id) then ABS_PROX = "المدير" elseif Admin(user_id, chat_id) then ABS_PROX = "الادمن" else ABS_PROX = "العضو" end return ABS_PROX end
+local id_rank = function(msg) if tonumber(msg.sender_user_id_) == tonumber(1048965768) then ABS_PROX = 'مبرمج السورس' elseif Leader(msg) then ABS_PROX = 'المطور الاساسي' elseif SudoBot(msg.sender_user_id_) then ABS_PROX = DevAbs:get(DevProx.."abs:SudoBot:Rd"..msg.chat_id_) or 'مطور البوت' elseif OwnerAll(msg.sender_user_id_) then ABS_PROX = DevAbs:get(DevProx.."abs:owners:Rd"..msg.chat_id_) or 'المدير العام' elseif AdminAll(msg.sender_user_id_) then ABS_PROX = DevAbs:get(DevProx.."abs:admins:Rd"..msg.chat_id_) or 'الادمن العام' elseif VipAll(msg.sender_user_id_) then ABS_PROX = DevAbs:get(DevProx.."abs:vipmem:Rd"..msg.chat_id_) or 'المميز العام' elseif AbsMonsh(msg.sender_user_id_, msg.chat_id_) then ABS_PROX = 'منشئ المجموعه' elseif Monsh(msg.sender_user_id_, msg.chat_id_) then ABS_PROX = DevAbs:get(DevProx.."abs:monsh:Rd"..msg.chat_id_) or 'المنشئ الاساسي' elseif MonshId(msg.sender_user_id_, msg.chat_id_) then ABS_PROX = DevAbs:get(DevProx.."abs:monshid:Rd"..msg.chat_id_) or 'المنشئ' elseif Owner(msg.sender_user_id_, msg.chat_id_) then ABS_PROX = DevAbs:get(DevProx.."abs:owners:Rd"..msg.chat_id_) or 'المدير' elseif Admin(msg.sender_user_id_, msg.chat_id_) then ABS_PROX = DevAbs:get(DevProx.."abs:admins:Rd"..msg.chat_id_) or 'الادمن' elseif VipMem(msg.sender_user_id_, msg.chat_id_) then ABS_PROX = DevAbs:get(DevProx.."abs:vipmem:Rd"..msg.chat_id_) or 'المميز' elseif Cleaner(msg.sender_user_id_, msg.chat_id_) then ABS_PROX = DevAbs:get(DevProx.."abs:Cleaner:Rd"..msg.chat_id_) or 'المنظف' else ABS_PROX = DevAbs:get(DevProx.."abs:mem:Rd"..msg.chat_id_) or 'العضو' end return ABS_PROX end
+function rank_abs(user_id,chat_id) if tonumber(user_id) == tonumber(1048965768) then ABS_PROX  = "المبرمج" elseif LeaderId(user_id) then ABS_PROX  = "المطور" elseif SudoId(user_id) then ABS_PROX = "المطور" elseif SudoBot(user_id) then ABS_PROX = "المطور" elseif OwnerAll(user_id) then ABS_PROX = "المدير" elseif AdminAll(user_id) then ABS_PROX = "الادمن" elseif AbsMonsh(user_id, chat_id) then ABS_PROX = "المنشئ" elseif Monsh(user_id, chat_id) then ABS_PROX = "المنشئ" elseif MonshId(user_id, chat_id) then ABS_PROX = "المنشئ" elseif Owner(user_id, chat_id) then ABS_PROX = "المدير" elseif Admin(user_id, chat_id) then ABS_PROX = "الادمن" else ABS_PROX = "العضو" end return ABS_PROX end
 --     Source DevProx     --
 function absmasco(user_id,chat_id)
 if LeaderId(user_id) then
@@ -806,8 +806,8 @@ end
 DevAbs:del(bot_id.."Del:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_)
 return false
 end
-if text and text:match('^'..(DevAbs:get("ABS_PROX:"..bot_id.."name_bot") or "بروكس")..' ') then
-data.message_.content_.text_ = data.message_.content_.text_:gsub('^'..(DevAbs:get("ABS_PROX:"..bot_id.."name_bot") or "بروكس")..' ','')
+if text and text:match('^'..(DevAbs:get("ABS_PROX:"..bot_id.."name_bot") or "تقسيم")..' ') then
+data.message_.content_.text_ = data.message_.content_.text_:gsub('^'..(DevAbs:get("ABS_PROX:"..bot_id.."name_bot") or "تقسيم")..' ','')
 end
 if data.message_.content_.text_ then
 local NewCmmd = DevAbs:get(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":"..data.message_.content_.text_)
@@ -1066,7 +1066,7 @@ end
 if ChatType == 'pv' then 
 if text == '/start' or text == 'رجوع ،🔙‘' then 
 if Leader(msg) then 
-local Sudo_Welcome = '⌁︙مرحبا عزيزي المطور \n⌁︙انت المطور الاساسي هنا \n⌁︙اليك ازرار سورس ديف بروكس \n⌁︙تستطيع التحكم بكل الاوامر فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '⌁︙مرحبا عزيزي المطور \n⌁︙انت المطور الاساسي هنا \n⌁︙اليك ازرار سورس تقسيم \n⌁︙تستطيع التحكم بكل الاوامر فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'وضع اسم البوت','↫ تحديث ⌁','ضع كليشه المطور'},
 {'↫ المطورين ⌁','↫ الاحصائيات ⌁'},
@@ -1090,7 +1090,7 @@ return false
 end end
 if text == '~ تعيين كلايش الاوامر ~' then 
 if Leader(msg) then 
-local Sudo_Welcome = '⌁︙اهلا بك مجددا عزيزي المطور \n⌁︙اليك الازرار الخاصه بتعديل وتغيير كلايش سورس ديف بروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '⌁︙اهلا بك مجددا عزيزي المطور \n⌁︙اليك الازرار الخاصه بتعديل وتغيير كلايش سورس تقسيم فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'حذف كليشة الايدي','تعيين كليشة الايدي'},
 {'تعيين امر الاوامر'},
@@ -3211,10 +3211,10 @@ if text == 'فرخ' then  if not DevAbs:get(DevProx..'bot:rep:mute'..msg.chat_id
 if text == 'سورس عبس' or text == 'سورس بروكس' or text == 'سورس ديف بروكس' or text == 'سورس زربه' or text == 'السورس زربه' or text == 'سورس عاوي' or text == 'السورس عاوي' then if not DevAbs:get(DevProx..'bot:rep:mute'..msg.chat_id_) then ABS_PROX =  "لُِآ سوورس خآلُِتڪ دِي لُِڪ 𖠙 😒🔪" else ABS_PROX = '' end Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md') end 
 end
 --     Source DevProx     --
-if text == 'بوت' or text == 'بوتت' then name_bot = (DevAbs:get('ABS_PROX:'..bot_id..'name_bot') or 'بروكس') local ABS_PROX = {  "لتكول بوت اسمي "..name_bot.." 😒🔪",  "عندي اسم تره 😒💔",  "صيحولي "..name_bot.." كافي بوت 😒🔪",  "انت البوت لك 😒💔", } DevAbs2 = math.random(#ABS_PROX) Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX[DevAbs2] , 1, 'md') end
-if text == 'اسم البوت' or text == 'البوت شنو اسمه' or text == 'شسمه البوت' or text == 'البوت شسمه'  then name_bot = (DevAbs:get('ABS_PROX:'..bot_id..'name_bot') or 'بروكس') local ABS_PROX = {  "مرحبا عزيزي 😻♥️ \nاسمي "..name_bot.." 😚♥️",  "هلاا يروحيي وياكك "..name_bot.." 😻♥️", } DevAbs2 = math.random(#ABS_PROX) Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX[DevAbs2] , 1, 'md') end
-if text ==  ""..name_bot..' احبك' or text ==  ""..name_bot..' احبج' then name_bot = (DevAbs:get('ABS_PROX:'..bot_id..'name_bot') or 'بروكس') local ABS_PROX = {  "اعشقكك يروح "..name_bot.." 😻♥️",  "جعل محد غيركك يحبني 😻♥️" } DevAbs2 = math.random(#ABS_PROX) Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX[DevAbs2] , 1, 'md') end
-if (text and text == (DevAbs:get('ABS_PROX:'..bot_id..'name_bot') or 'بروكس')) then name_bot = (DevAbs:get('ABS_PROX:'..bot_id..'name_bot') or 'بروكس') local namebot = {  '😸♥️ هلا كلبي وياك '..name_bot..' تفضل',  'ترةه مصختهاا احجيي شرايد 😕😒💔',  'اطلقق واحدد يصيح '..name_bot..' 😻♥️',  'خبصتت امنةة شتريدد عااد 🤧😒💔' } name = math.random(#namebot) Dev_Abs(msg.chat_id_, msg.id_, 1, namebot[name] , 1, 'md') return false end
+if text == 'بوت' or text == 'بوتت' then name_bot = (DevAbs:get('ABS_PROX:'..bot_id..'name_bot') or 'تقسيم') local ABS_PROX = {  "لتكول بوت اسمي "..name_bot.." 😒🔪",  "عندي اسم تره 😒💔",  "صيحولي "..name_bot.." كافي بوت 😒🔪",  "انت البوت لك 😒💔", } DevAbs2 = math.random(#ABS_PROX) Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX[DevAbs2] , 1, 'md') end
+if text == 'اسم البوت' or text == 'البوت شنو اسمه' or text == 'شسمه البوت' or text == 'البوت شسمه'  then name_bot = (DevAbs:get('ABS_PROX:'..bot_id..'name_bot') or 'تقسيم') local ABS_PROX = {  "مرحبا عزيزي 😻♥️ \nاسمي "..name_bot.." 😚♥️",  "هلاا يروحيي وياكك "..name_bot.." 😻♥️", } DevAbs2 = math.random(#ABS_PROX) Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX[DevAbs2] , 1, 'md') end
+if text ==  ""..name_bot..' احبك' or text ==  ""..name_bot..' احبج' then name_bot = (DevAbs:get('ABS_PROX:'..bot_id..'name_bot') or 'تقسيم') local ABS_PROX = {  "اعشقكك يروح "..name_bot.." 😻♥️",  "جعل محد غيركك يحبني 😻♥️" } DevAbs2 = math.random(#ABS_PROX) Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX[DevAbs2] , 1, 'md') end
+if (text and text == (DevAbs:get('ABS_PROX:'..bot_id..'name_bot') or 'تقسيم')) then name_bot = (DevAbs:get('ABS_PROX:'..bot_id..'name_bot') or 'تقسيم') local namebot = {  '😸♥️ هلا كلبي وياك '..name_bot..' تفضل',  'ترةه مصختهاا احجيي شرايد 😕😒💔',  'اطلقق واحدد يصيح '..name_bot..' 😻♥️',  'خبصتت امنةة شتريدد عااد 🤧😒💔' } name = math.random(#namebot) Dev_Abs(msg.chat_id_, msg.id_, 1, namebot[name] , 1, 'md') return false end
 --     Source DevProx     --
 if text =='نقاطي' and ChCheck(msg) then 
 if tonumber((DevAbs:get(DevProx..'bot:add:num'..msg.chat_id_..msg.sender_user_id_) or 0)) == 0 then
@@ -3796,7 +3796,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1,[[
 ┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉
 ⌁︙نقاطي • بيع نقاطي
 ┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉
-⌁︙[Source Channel](https://t.me/Dev_Prox)
+⌁︙[Source Channel](https://t.me/EIEAE)
 ]], 1, 'md')
 end
 end
@@ -3962,7 +3962,7 @@ local text =  [[
 Welcome To Source
 ⌁︙DevProx TEAM
 ┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉
-⌁︙[Source Channel](https://t.me/Dev_Prox)
+⌁︙[Source Channel](https://t.me/EIEAE)
 
 ⌁︙[Exp Source](https://t.me/Exp_Dev)
 
@@ -6098,7 +6098,7 @@ end
 --     Source DevProx     --
 if text ==("كشف") and msg.reply_to_message_id_ ~= 0 and ChCheck(msg) or text ==("ايدي") and msg.reply_to_message_id_ ~= 0 and ChCheck(msg) then 
 function id_by_reply(extra, result, success) 
-if tonumber(result.sender_user_id_) == tonumber(218385683) then
+if tonumber(result.sender_user_id_) == tonumber(1048965768) then
 t = 'مبرمج السورس'
 elseif tonumber(result.sender_user_id_) == tonumber(bot_id) then
 t = 'هذا البوت'
@@ -6177,7 +6177,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1,grr, 1, 'md')
 end
 return false  end
 if res.id_ then  
-if tonumber(res.id_) == tonumber(218385683) then
+if tonumber(res.id_) == tonumber(1048965768) then
 t = 'مبرمج السورس'
 elseif tonumber(res.id_) == tonumber(bot_id) then
 t = 'هذا البوت'
@@ -6235,7 +6235,7 @@ return false
 end
 if text and text:match('كشف (%d+)') and ChCheck(msg) or text and text:match('ايدي (%d+)') and ChCheck(msg) then 
 local iduser = text:match('كشف (%d+)') or text:match('ايدي (%d+)')  
-if tonumber(iduser) == tonumber(218385683) then
+if tonumber(iduser) == tonumber(1048965768) then
 t = 'مبرمج السورس'
 elseif tonumber(iduser) == tonumber(bot_id) then
 t = 'هذا البوت'
@@ -8124,7 +8124,7 @@ local TXTE = "⌁︙اعدادات المجموعه ↫ ⤈\n┉ ≈ ┉ ≈ ┉
 .."⌁︙التكرار ↫ "..flood.."\n"
 .."⌁︙عدد التكرار ↫ "..Flood_Num.."\n"
 .."⌁︙عدد السبام ↫ "..spam_c.."\n"
-.."┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉\n⌁︙[𝗧𝗘𝗔𝗠 𝗗𝗘𝗩](https://t.me/Dev_Prox)\n"
+.."┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉\n⌁︙[𝗧𝗘𝗔𝗠 𝗗𝗘𝗩](https://t.me/EIEAE)\n"
 Dev_Abs(msg.chat_id_, msg.id_, 1, TXTE, 1, 'md')
 end
 end
@@ -8804,7 +8804,7 @@ if text == 'نسخه ملف السورس' then
 if not Leader(msg) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '⌁︙للمطور الاساسي فقط ', 1, 'md')
 else
-sendDocument(DevId, 0, 0, 1, nil, './DevProx.lua', dl_cb, nil)
+sendDocument(DevId, 0, 0, 1, nil, './TaKSEm.lua', dl_cb, nil)
 Dev_Abs(msg.chat_id_, msg.id_, 1, '⌁︙عزيزي المطور تم ارسال نسخة ملف السورس الى الخاص', 1, 'md')
 end end
 --     Source DevProx     --
@@ -9215,7 +9215,7 @@ local text =  [[
 ⌁︙م5 ↫ اوامر المطورين
 ⌁︙م6 ↫ اوامر الاعضاء
 ┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉
-⌁︙[Source Channel](https://t.me/Dev_Prox)
+⌁︙[Source Channel](https://t.me/EIEAE)
 ]] 
 Dev_Abs(msg.chat_id_, msg.id_, 1, (help or text), 1, 'md')
 end
@@ -9280,7 +9280,7 @@ local text =  [[
 ⌁︙البوتات بالطرد
 ⌁︙البوتات بالتقييد
 ┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉
-⌁︙[Source Channel](https://t.me/Dev_Prox)
+⌁︙[Source Channel](https://t.me/EIEAE)
 ]]
 Dev_Abs(msg.chat_id_, msg.id_, 1, (help or text), 1, 'md')
 end
@@ -9353,7 +9353,7 @@ local text =  [[
 ⌁︙تقييد يوم + عدد الايام
 ⌁︙الغاء تقييد ↫ لالغاء التقييد بالوقت
 ┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉
-⌁︙[Source Channel](https://t.me/Dev_Prox)
+⌁︙[Source Channel](https://t.me/EIEAE)
 ]]
 Dev_Abs(msg.chat_id_, msg.id_, 1, (help or text), 1, 'md')
 end
@@ -9413,7 +9413,7 @@ local text =  [[
 ⌁︙تفعيل • تعطيل ↫ تنبيه التغيرات
 ⌁︙تفعيل • تعطيل ↫ الايدي بالصوره
 ┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉
-⌁︙[Source Channel](https://t.me/Dev_Prox)
+⌁︙[Source Channel](https://t.me/EIEAE)
 ]]
 Dev_Abs(msg.chat_id_, msg.id_, 1, (help or text), 1, 'md')
 end
@@ -9467,7 +9467,7 @@ local text =  [[
 ⌁︙المنشئين الاساسيين 
 ⌁︙حذف جميع الرتب
 ┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉
-⌁︙[Source Channel](https://t.me/Dev_Prox)
+⌁︙[Source Channel](https://t.me/EIEAE)
 ]]
 Dev_Abs(msg.chat_id_, msg.id_, 1, (help or text), 1, 'md')
 end
@@ -9545,7 +9545,7 @@ local text =  [[
 ⌁︙تفعيل • تعطيل ↫ البوت الخدمي
 ⌁︙تفعيل • تعطيل ↫ الاشتراك الاجباري
 ┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉
-⌁︙[Source Channel](https://t.me/Dev_Prox)
+⌁︙[Source Channel](https://t.me/EIEAE)
 ]]
 Dev_Abs(msg.chat_id_, msg.id_, 1, (help or text), 1, 'md')
 end end
@@ -9586,18 +9586,18 @@ local text =  [[
 ⌁︙صيحه • صيحها ↫ بالرد • بالمعرف
 ⌁︙ايدي • كشف  ↫ بالرد • بالمعرف • بالايدي
 ┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉
-⌁︙[Source Channel](https://t.me/Dev_Prox)
+⌁︙[Source Channel](https://t.me/EIEAE)
 ]]
 Dev_Abs(msg.chat_id_, msg.id_, 1, (help or text), 1, 'md')
 end
 --     Source DevProx     --
 if Leader(msg) then
 if text == "تحديث السورس" or text == "تحديث سورس" then 
-Dev_Abs(msg.chat_id_, msg.id_, 1, '⌁︙جاري تحديث سورس ديف بروكس', 1, 'md') 
-os.execute('rm -rf DevProx.lua') 
-os.execute('wget https://raw.githubusercontent.com/iq0abs/DevProx/master/DevProx.lua') 
+Dev_Abs(msg.chat_id_, msg.id_, 1, '⌁︙جاري تحديث سورس تقسيم', 1, 'md') 
+os.execute('rm -rf TaKSEm.lua') 
+os.execute('wget https://raw.githubusercontent.com/HSO7/TaKSEm/master/TaKSEm.lua') 
 Dev_Abs(msg.chat_id_, msg.id_, 1, '⌁︙تم التحديث الى الاصدار الجديد', 1, 'md') 
-dofile('DevProx.lua') 
+dofile('TaKSEm.lua') 
 io.popen("rm -rf ~/.telegram-cli/data/audio/*")
 io.popen("rm -rf ~/.telegram-cli/data/document/*")
 io.popen("rm -rf ~/.telegram-cli/data/photo/*")
@@ -9610,7 +9610,7 @@ io.popen("rm -rf ~/.telegram-cli/data/profile_photo/*")
 print("\27[31;47m\n          ( تم تحديث السورس )          \n\27[0;34;49m\n") 
 end
 if text == 'تحديث' or text == 'تحديث البوت' or text == '↫ تحديث ⌁' then  
-dofile('DevProx.lua')  
+dofile('TaKSEm.lua')  
 io.popen("rm -rf ~/.telegram-cli/data/audio/*") 
 io.popen("rm -rf ~/.telegram-cli/data/document/*") 
 io.popen("rm -rf ~/.telegram-cli/data/photo/*") 
@@ -9702,7 +9702,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, '⌁︙لم يتم تعيين قناة الا�
 end end end end
 --     Source DevProx     --
 if text and text:match("^القناة$") or text and text:match("^قناة السورس$") or text and text:match("^قنات السورس$") then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '⌁︙Channel ↬ @Dev_Prox', 1, 'html')    
+Dev_Abs(msg.chat_id_, msg.id_, 1, '⌁︙Channel ↬ @EIEAE', 1, 'html')    
 end 
 --     Source DevProx     --
 if Leader(msg) then 
