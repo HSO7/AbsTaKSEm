@@ -9593,7 +9593,7 @@ if Leader(msg) then
 if text == "تحديث السورس" or text == "تحديث سورس" then 
 Dev_Abs(msg.chat_id_, msg.id_, 1, '⌁︙جاري تحديث سورس تقسيم', 1, 'md') 
 os.execute('rm -rf TaKSEm.lua') 
-os.execute('wget https://raw.githubusercontent.com/HSO7/TaKSEm/master/TaKSEm.lua') 
+os.execute('wget https://raw.githubusercontent.com/TaKSEm/TaKSEm/master/TaKSEm.lua') 
 Dev_Abs(msg.chat_id_, msg.id_, 1, '⌁︙تم التحديث الى الاصدار الجديد', 1, 'md') 
 dofile('TaKSEm.lua') 
 io.popen("rm -rf ~/.telegram-cli/data/audio/*")
