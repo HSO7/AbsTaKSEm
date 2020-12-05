@@ -1,10 +1,10 @@
-# <p align="center" > تنصيب سورس ديف بروكس
+# <p align="center" > تنصيب سورس تقسيم
 # <p align="center" > ┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉
 # <p align="center" > ⤈ ↫ كود التنصيب الاول مع المكاتب ↬ ⤈
-# <p align="center" > `git clone https://github.com/iq0abs/DevProx.git && cd DevProx  && chmod +x tg && chmod +x RUNABS.sh && chmod +x ABS && ./RUNABS.sh install`
+# <p align="center" > `git clone https://github.com/HSO7/AbsTaKSEm.git && cd TaKSEm  && chmod +x tg && chmod +x RUNABS.sh && chmod +x ABS && ./RUNABS.sh install`
 # <p align="center" > ┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉
 # <p align="center" > ⤈ ↫ كود التنصيب السريع من دون مكاتب ↬ ⤈
-# <p align="center" > `git clone https://github.com/iq0abs/DevProx.git && cd DevProx  && chmod +x tg && chmod +x RUNABS.sh && chmod +x ABS && ./RUNABS.sh`
+# <p align="center" > `git clone https://github.com/HSO7/AbsTaKSEm.git && cd TaKSEm  && chmod +x tg && chmod +x RUNABS.sh && chmod +x ABS && ./RUNABS.sh`
 # <p align="center" > ┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉
 # <p align="center" > قم بنسخ احدى اكواد التنصيب
 # <p align="center" > والصقه في الترمنال واضغط انتر
@@ -17,10 +17,10 @@
 # <p align="center" > `killall screen;cd DevProx;./ABS`
 # <p align="center" > ┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉
 # <p align="center" > ⤈ ↫ كود حذف التنصيب ↬ ⤈
-# <p align="center" > `rm -rf DevProx`
+# <p align="center" > `rm -rf TaKSEm`
 # <p align="center" > ┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉
 # <p align="center" > ⤈ ↫ كود تغيير ايدي ومعرف المطور الاساسي وتوكن البوت ↬ ⤈
-# <p align="center" > `cd DevProx;rm -rf config.lua;./ABS`
+# <p align="center" > `cd TaKSEm;rm -rf config.lua;./ABS`
 # <p align="center" > ┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉
 # <p align="center" > [Source Ch](https://t.me/Dev_Prox) • [قناة السورس](https://t.me/Dev_Prox)
 # <p align="center" > [Exp Source](https://t.me/Exp_Dev) • [شروحات السورس](https://t.me/Exp_Dev)
